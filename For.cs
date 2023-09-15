@@ -10,7 +10,7 @@
             // For4();
             // For5();
             // For6();
-            // For7();
+            // Console.WriteLine(For7()); 
             // For8();
             // For9();
             // For10();
@@ -113,7 +113,7 @@
             }
         }
 
-        static void For7()
+        static int For7()
         {
             int a = 1;
             int b = 10;
@@ -123,7 +123,7 @@
                 sum += i;
             }
 
-            Console.WriteLine(sum);
+            return sum;
         }
 
         static void For8()
