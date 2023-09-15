@@ -1,0 +1,15 @@
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\bin\Debug\net6.0\TrainingTasks.exe
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\bin\Debug\net6.0\TrainingTasks.deps.json
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\bin\Debug\net6.0\TrainingTasks.runtimeconfig.json
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\bin\Debug\net6.0\TrainingTasks.dll
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\bin\Debug\net6.0\TrainingTasks.pdb
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.csproj.AssemblyReference.cache
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.AssemblyInfo.cs
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.dll
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\refint\TrainingTasks.dll
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.pdb
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\TrainingTasks.genruntimeconfig.cache
+C:\Users\Robert\source\repos\TrainingTasks\TrainingTasks\obj\Debug\net6.0\ref\TrainingTasks.dll
