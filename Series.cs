@@ -22,6 +22,16 @@ public class Series
       //  Series16(5,new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 });
       //  Series17(5,new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
       //  Series25(5,new int[] { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+          int[][] sets = new int[][] {
+             new int[] { 1, 2, 3 },
+             new int[] { 4, 5, 6 },
+             new int[] { 7, 8, 9 },
+             new int[] { 10, 2,11, 12, 2 },
+             new int[] { 13, 14, 15 }
+         };
+     //  Console.WriteLine(Series31(sets));
+     //  Series32(5,sets);
+     //  Series33(5,sets);
     }
 
    
@@ -323,17 +333,11 @@ public class Series
 
     static int Series22(int n,int[] numbers)
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n - 1; i++)
         {
             if (numbers[i] > numbers[i + 1])
             {
-                return i+1;
-                break;
-            }
-            else if (numbers[i] < numbers[i + 1])
-            { 
-                return 0;
-                break;
+                return i + 1;
             }
         }
         return 0;
@@ -343,83 +347,58 @@ public class Series
     {
         for (int i = 1; i < n - 1; i++)
         {
-            if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1])
+            if (!((numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1]) ||
+                  (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1])))
             {
                 return i;
-                break;
-            }
-            else if (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1])
-            {
-                return i;
-                break;
-            }
-            else if (numbers[i] > numbers[i - 1] && numbers[i] < numbers[i + 1])
-            {
-                return 0;
-                break;
-            }
-            else if (numbers[i] < numbers[i - 1] && numbers[i] > numbers[i + 1])
-            {
-                return 0;
-                break;
             }
         }
-
-        return -1;
+        return 0;
     }
 
     static int Series24(int n,int[] numbers)
     {
         int sum = 0;
-        for (int i = 0; i < n; i++)
+        bool foundFirstZero = false;
+
+        for (int i = 0; i < numbers.Length; i++)
         {
-            if (numbers[i] == 0 && numbers[i+1] ==0)
-            { 
-                return 0;
-            }
-            else if (numbers[i] == 0)
+            if (numbers[i] == 0)
             {
-                for (int j = 0; j < n; j++)
+                if (foundFirstZero)
                 {
-                    if (numbers[j] == 0)
-                    {
-                        return sum;
-                        break;
-                    }
-                    else
-                    {
-                        sum += numbers[j];
-                    }
+                    return sum;
                 }
+                foundFirstZero = true;
+                sum = 0;
+            }
+            else if (foundFirstZero)
+            {
+                sum += numbers[i];
             }
         }
+
         return 0;
     }
     
     static int Series25(int n, int[] numbers)
     {
         int sum = 0;
-        for (int i = 0; i < n; i++)
+        bool foundFirstZero = false;
+
+        for (int i = 0; i < numbers.Length; i++)
         {
-            if (numbers[i] == 0 && numbers[i + 1] == 0)
+            if (numbers[i] == 0)
             {
-                return 0;
-                break;
-            }
-            else if (numbers[i] == 0)
-            {
-                for (int j = i + 1; j < n; j++)
+                if (foundFirstZero)
                 {
-                    if (numbers[j] == 0)
-                    {
-                        return sum;
-                        break;
-                    }
-                    else
-                    {
-                        sum += numbers[j];
-                    }
+                    return sum;
                 }
+                foundFirstZero = true;
+            }
+            else if (foundFirstZero)
+            {
+                sum += numbers[i];
             }
         }
 
@@ -440,4 +419,121 @@ public class Series
         }
         return 0;
     }
+
+    static float Series27(int n, int[] numbers)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            float result = 1;
+            for (int j = 0; j <  i + 1; j++)
+            {
+                result *= numbers[i];
+            }
+
+            return result;
+        }
+        return 0;
+    }
+    
+    static float Series28(int n, int[] numbers)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            float result = 1;
+            for (int j = 0; j <  n - i; j++)
+            {
+                result *= numbers[i];
+            }
+
+            return result;
+        }
+        return 0;
+    }
+
+    static float Series29(int n, int k, int[] numbers)
+    {
+        int sum = 0;
+        for (int i = 0; i < n * k; i++)
+        {
+            sum += numbers[i];
+        }
+
+        return sum;
+    }
+
+    static float Series30(int n, int k, int[] numbers)
+    {
+        int sum = 0;
+        for (int i = 0; i <  n * k; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                sum += numbers[i];
+            }
+        }
+
+        return sum;
+    }
+    
+    static int Series31(int[][] sets)
+    {
+        int count = 0;
+
+        foreach (var set in sets)
+        {
+            foreach (var num in set)
+            {
+                if (num == 2)
+                {
+                    count++;
+                    break; 
+                }
+            }
+        }
+        return count;
+    }
+    
+    static void Series32(int k, int[][] sets)
+    {
+        for (int i = 0; i < k; i++)
+        {
+            int index = FindIndexOfTwo(sets[i]);
+            Console.WriteLine(index);
+        }
+    }
+    
+    static int FindIndexOfTwo(int[] set)
+    {
+        for (int i = 0; i < set.Length; i++)
+        {
+            if (set[i] == 2)
+            {
+                return i + 1; 
+            }
+        }
+        return 0; 
+    }
+
+    static void Series33(int k,int[][] sets)
+    {
+        for (int i = 0; i < k; i++)
+        {
+            int index = FindLastIndexOfTwo(sets[i]);
+            Console.WriteLine(index);
+        }
+    }
+    
+    static int FindLastIndexOfTwo(int[] set)
+    {
+        int result = 0;
+        for (int i = 0; i < set.Length; i++)
+        {
+            if (set[i] == 2)
+            {
+                result = i + 1; 
+            }
+        }
+        return result; 
+    }
+
 }

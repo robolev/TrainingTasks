@@ -1,6 +1,6 @@
 ﻿using TrainingTasks;
 
 
-new Series().Main(args);
+new MinMax().Main(args);
 
 

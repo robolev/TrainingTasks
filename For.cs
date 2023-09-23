@@ -28,6 +28,9 @@
             // For22();
             // For23();
             // For24();
+            // Console.WriteLine(For25(4,5));
+            // Console.WriteLine(For26(4,5));
+            // Console.WriteLine(For27(4,5));
             // For30();
             // For31();
             // For32();
@@ -356,6 +359,48 @@
             Console.WriteLine(sum);
         }
 
+        static double For25(int x,int n)
+        {
+            double power = x;
+            double sum = 0;
+            int sign = 1;
+            for(int i = 1;i <= n;i++)
+            {
+                sum += sign * power/i;
+                power *= x;
+                sign = -sign;
+            }
+            return sum;
+        }
+        
+        static double For26(int x,int n)
+        {
+            double power = x;
+            double sum = 0;
+            int sign = 1;
+            for(int i = 1;i <= n;i++)
+            {
+                sum += sign * power/2*n+1;
+                power *= 2*n+1;
+                sign = -sign;
+            }
+            return sum;
+        }
+
+        static double For27(int x,int n)
+        {
+            double power = x;
+            double sum = 0;
+            
+            for(int i = 1;i <= n;i++)
+            {
+                sum += (2*n-1) * power/(2*n+1);
+                power *= 2*n+1;
+          
+            }
+            return sum;
+        }
+        
         static void For30()
         {
             int n = 10;
@@ -498,7 +543,5 @@
                 k++;
             }
         }
-
-        
     }
 }
