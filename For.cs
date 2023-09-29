@@ -375,30 +375,35 @@
         
         static double For26(int x,int n)
         {
+            double result = 0;
+            double sign = 1;
             double power = x;
-            double sum = 0;
-            int sign = 1;
-            for(int i = 1;i <= n;i++)
+
+            for (int i = 1; i <= n; i++)
             {
-                sum += sign * power/2*n+1;
-                power *= 2*n+1;
+                result += sign * (power / (2 * i - 1));
                 sign = -sign;
+                power *= x; 
             }
-            return sum;
+            return result;
         }
 
         static double For27(int x,int n)
         {
-            double power = x;
-            double sum = 0;
-            
-            for(int i = 1;i <= n;i++)
+            double result = x; 
+            double power = x; 
+
+            for (int i = 1; i <= n; i++)
             {
-                sum += (2*n-1) * power/(2*n+1);
-                power *= 2*n+1;
-          
+                power *= x * x; 
+
+                if (i % 2 == 1) 
+                {
+                    result += power / (2 * i + 1); 
+                }
             }
-            return sum;
+
+            return result;
         }
         
         static void For30()

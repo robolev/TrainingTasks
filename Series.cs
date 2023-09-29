@@ -151,10 +151,6 @@ public class Series
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
         }
         return false;
     }
@@ -206,11 +202,13 @@ public class Series
     static void Series14(int k,int[] numbers)
     {
         int count = 0;
+        int index = -1;
+
         for (int i = 0; i < numbers.Length; i++)
         {
             if (numbers[i] == 0)
             {
-                Console.WriteLine(i);
+                index = i; 
                 break;
             }
             else if (numbers[i] < k)
@@ -218,6 +216,7 @@ public class Series
                 count++;
             }
         }
+
         Console.WriteLine(count);
     }
 
