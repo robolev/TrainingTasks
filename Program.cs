@@ -1,6 +1,6 @@
 ﻿using TrainingTasks;
 
 
-new MinMax().Main(args);
+new Arrays().Main(args);
 
 

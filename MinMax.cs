@@ -41,6 +41,7 @@ public class MinMax
        //  Console.WriteLine(MinMax25(new int[]{10,3,2,4,8,5,63,89}));
        //  Console.WriteLine(MinMax26(new int[]{10,3,2,4,8,5,63,89}));
        //  Console.WriteLine(MinMax27(new int[]{0,0,1,1,1,1,0,0}));
+       //  Console.WriteLine(MinMax28(new int[]{0,0,0,0,1,1,0,0}));
     }
 
     static (int min,int max)MinMax1(int[] numbers)
@@ -545,5 +546,36 @@ public class MinMax
         }
         
         return (longestSequenceStart,longestSequenceLength);
+    }
+
+    static (int countSequence,int numbersCount) MinMax28(int[] numbers)
+    {
+        int longestSequenceStart = 0;
+        int longestSequenceLength = 0;
+
+        int currentSequenceStart = 0;
+        int currentSequenceLength = 1;
+
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] == 1) 
+            {
+                currentSequenceLength++;
+            }
+            else if(numbers[i] != 1)
+            {
+                currentSequenceStart = i+1;
+                currentSequenceLength = 0;
+            }
+
+            if (currentSequenceLength > longestSequenceLength)
+            {
+                longestSequenceStart = currentSequenceStart;
+                longestSequenceLength = currentSequenceLength;
+            }
+        }
+        
+        return (longestSequenceStart,longestSequenceLength);
+        
     }
 } 
